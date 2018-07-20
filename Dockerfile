@@ -1,6 +1,6 @@
 FROM centos:latest
 USER root
-# RUN yum -y upgrade && yum clean all
+RUN yum -y install yum-utils rpm-build && yum-builddep git
 LABEL io.k8s.description="Major's test for arbitrary user ids in openshift" \
       io.k8s.display-name="Major UID Test" \
       io.openshift.tags="test" \
